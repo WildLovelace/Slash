@@ -1,0 +1,12 @@
+    async handle(req: http.IncomingMessage, res: http.ServerResponse) {
+        // это обработчик HTTP запросов
+        const p = req.url ? req.url.split("?")[0] : "";
+        let url = req.url;
+        let self = this;
+        let msgtxt = ""
+        let sepurl = url.split('/');
+        let urlpart1 = "/" + sepurl[1];
+        let seputl2 = sepurl.slice(2);
+        let urlpart2 = seputl2.join("/");
+        switch (urlpart1) {
+            case "/get": {
